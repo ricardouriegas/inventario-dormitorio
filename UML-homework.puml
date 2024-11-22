@@ -1,0 +1,40 @@
+@startuml cuarto
+' view in vertical direction
+left to right direction
+title Sistema de Inventario del Cuarto
+
+:Yo: as Admin
+
+rectangle "Sistema Inventario de Mi Cuarto" {
+    (Gestionar Items) as CU1
+    (Gestionar Muebles) as CU2
+    (Gestionar Inmuebles) as CU3
+    (Buscar Item) as CU4
+
+    ' mueble
+    (Alta Mueble) as CU2.1
+    (Baja Mueble) as CU2.2
+    (Modificar Mueble) as CU2.3
+
+    ' inmueble
+    (Alta Inmueble) as CU3.1
+    (Baja Inmueble) as CU3.2
+    (Modificar Inmueble) as CU3.3
+
+    CU2 .-> CU2.1 : include
+    CU2 .-> CU2.2 : include
+    CU2 .-> CU2.3 : include
+
+    CU3 .-> CU3.1 : include
+    CU3 .-> CU3.2 : include
+    CU3 .-> CU3.3 : include
+
+}
+
+CU1 --> CU2
+CU1 --> CU3
+
+Admin --> CU1
+Admin --> CU4
+
+@enduml

@@ -1,0 +1,14 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Propósito del Documento}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Alcance del Sistema}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Requisitos Funcionales}{3}{section.2}%
+\contentsline {section}{\numberline {3}Requisitos No Funcionales}{3}{section.3}%
+\contentsline {section}{\numberline {4}Casos de Uso}{3}{section.4}%
+\contentsline {section}{\numberline {5}Riesgos Identificados}{3}{section.5}%
+\contentsline {section}{\numberline {6}Aprobación del Documento}{3}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{3}{section.7}%
+\contentsline {section}{\numberline {8}Anexos}{3}{section.8}%
+\contentsline {section}{\numberline {9}Examples}{4}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Pictures}{4}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Citation}{4}{subsection.9.2}%

@@ -70,7 +70,7 @@
 
 \section{Introduction}
 \subsection{Propósito del Documento}
-Este documento tiene como objetivo describir los requisitos funcionales y no funcionales del \textit{Sistema de Inventario del Cuarto}. Los requisitos aquí documentados son el resultado de entrevistas y validaciones con el cliente; con el propósito de asegurar cubre las necesidades correspondientes.
+El objetivo de este documento es describir los requisitos funcionales y no funcionales del \textit{Sistema de Inventario del Cuarto}. Los requisitos aquí documentados son el resultado de entrevistas y validaciones con el cliente; con el propósito de asegurar cubre las necesidades correspondientes.
 
 \subsection{Alcance del Sistema}
 El sistema permitira gestionar de mejor manera el inventario de items del dormitorio. La solucion proposiona una interfaz moderna y amigable para el usuario.
@@ -121,14 +121,69 @@ El sistema permitira gestionar de mejor manera el inventario de items del dormit
 \end{itemize}
 
 \section{Casos de Uso}
+\subsection{CU1. Gestionar Items}
+\begin{itemize}
+    \item Descripción: El usuario podrá agregar, modificar y eliminar items del inventario.
+    \item Actores: Usuario
+    \item Precondición: El usuario debe estar autenticado.
+    \item Postcondición: El item se agrega, modifica o elimina del inventario.
+\end{itemize}
+
+\subsection{CU2. Gestionar Inmuebles}
+\begin{itemize}
+    \item Descripción: El usuario podrá agregar, modificar y eliminar inmuebles.
+    \item Actores: Usuario
+    \item Precondición: El usuario debe estar autenticado.
+    \item Postcondición: El inmueble se agrega, modifica o elimina del inventario.
+\end{itemize}
+
+\subsection{CU3. Gestionar Muebles}
+\begin{itemize}
+    \item Descripción: El usuario podrá agregar, modificar y eliminar muebles.
+    \item Actores: Usuario
+    \item Precondición: El usuario debe estar autenticado.
+    \item Postcondición: El mueble se agrega, modifica o elimina del inventario.
+\end{itemize}
+
+\subsection{CU4. Autenticación}
+\begin{itemize}
+    \item Descripción: El usuario podrá autenticarse.
+    \item Actores: Usuario
+    \item Precondición: El usuario debe ingresar una contraseña válida.
+    \item Postcondición: El usuario se autentica.
+\end{itemize}
 
 \section{Riesgos Identificados}
+\begin{itemize}
+    \item R1: El sistema pierde información.
+    \subitem \textbf{Mitigación:} Realizar respaldos de la información.
+    \item R2: El sistema se ralentiza.
+    \subitem \textbf{Mitigación:} Se implementa un sistema de caché.
+    \item R3: El sistema se desconecta.
+    \subitem \textbf{Mitigación:} Conectar una batería de respaldo.
+\end{itemize}
 
 \section{Aprobación del Documento}
+Este documento ha sido revisado y validado
+% tabla de aprobación
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Nombre} & \textbf{Rol} & \textbf{Firma} & \textbf{Fecha} \\
+        \hline
+        Ricardo Uriegas & Responsable del Proyecto & &  \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \section{Conclusion}
+Este documento se encarga de reflejar los requisitos funcionales y no funcionales del sistema de inventario del cuarto. La implementación realizada en este sistema, permitirá al usuario la gestión de items, inmuebles y muebles de manera organizada y eficiente.
 
 \section{Anexos}
+\subsection{Prototipo de la Interfaz}
+\subsection{Diagrama de Casos de Uso}
+\subsection{Manual Preliminar de Usuario}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage

@@ -38,6 +38,18 @@ $result = $conn->query($sql);
 </head>
 <body class="bg-gray-100">
 
+<!-- Header -->
+<header class="bg-blue-600 text-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Inventario del Cuarto</h1>
+        <nav>
+            <a href="#" class="text-white hover:text-gray-200 mx-2">Inicio</a>
+            <a href="#" class="text-white hover:text-gray-200 mx-2">Acerca de</a>
+            <a href="#" class="text-white hover:text-gray-200 mx-2">Contacto</a>
+        </nav>
+    </div>
+</header>
+
 <div class="container mx-auto p-4">
     <h1 class="text-2xl font-bold mb-4">Inventario del Cuarto</h1>
 

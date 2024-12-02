@@ -9,7 +9,6 @@ rectangle "Sistema Inventario de Mi Cuarto" {
     (Gestionar Items) as CU1
     (Gestionar Muebles) as CU2
     (Gestionar Inmuebles) as CU3
-    ' (Buscar Item) as CU4
     (Gestionar Categorías) as CU5
     (Gestionar Ubicaciones) as CU6
     (Buscar Item) as CU7
@@ -64,11 +63,7 @@ rectangle "Sistema Inventario de Mi Cuarto" {
 
 CU1 --> CU2
 CU1 --> CU3
-' CU1 --> CU5
-' CU1 --> CU6
-
 Admin --> CU1
-' Admin --> CU4
 Admin --> CU7
 
 @enduml

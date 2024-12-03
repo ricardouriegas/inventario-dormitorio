@@ -1,0 +1,56 @@
+@startuml ER_Diagram
+!define primary_key(x) <b>x</b> PK
+!define foreign_key(x) <i>x</i> FK
+
+entity "Administrador" {
+    primary_key(admin_id) : INT
+    ----------
+    nombre : VARCHAR
+    email : VARCHAR
+    password : VARCHAR
+}
+
+entity "Categoría" {
+    primary_key(categoria_id) : INT
+    ----------
+    nombre : VARCHAR
+}
+
+entity "Ubicación" {
+    primary_key(ubicacion_id) : INT
+    ----------
+    nombre : VARCHAR
+}
+
+entity "Item" {
+    primary_key(item_id) : INT
+    ----------
+    nombre : VARCHAR
+    descripcion : TEXT
+    tipo : VARCHAR
+}
+
+entity "Mueble" {
+    primary_key(item_id) : INT
+    ----------
+    foreign_key(categoria_id) : INT
+    foreign_key(ubicacion_id) : INT
+}
+
+entity "Inmueble" {
+    primary_key(item_id) : INT
+    ----------
+    direccion : VARCHAR
+    dimensiones : VARCHAR
+}
+
+' Relaciones
+Administrador ||--o{ Item : "gestiona"
+
+Item <|-- Mueble
+Item <|-- Inmueble
+
+Mueble }|..|{ Categoría : "asociado a"
+Mueble }|..|{ Ubicación : "ubicado en"
+
+@enduml

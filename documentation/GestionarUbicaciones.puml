@@ -1,0 +1,29 @@
+@startuml GestionarUbicaciones
+title Gestionar Ubicaciones
+left to right direction
+
+actor Administrador as admin
+actor "Base de Datos" as db
+
+rectangle "Sistema Inventario de Mi Cuarto" {
+    admin --> (Seleccionar Acción)
+
+    (Seleccionar Acción) --> (Agregar Ubicación)
+    (Seleccionar Acción) --> (Eliminar Ubicación)
+    (Seleccionar Acción) --> (Modificar Ubicación)
+
+    (Agregar Ubicación) --> (Ingresar Datos)
+    (Modificar Ubicación) --> (Ingresar Datos)
+    (Eliminar Ubicación) --> (Confirmar Eliminación)
+
+    (Ingresar Datos) --> (Validar Datos)
+    (Validar Datos) --> (Guardar Datos)
+    (Guardar Datos) --> db
+
+    (Confirmar Eliminación) --> db
+
+    ' Manejo de Flujos Alternativos
+    (Ingresar Datos) .down.> (Mostrar Mensaje de Error) : <<extend>>
+    admin -> (Iniciar Sesión) : <<include>>
+}
+@enduml

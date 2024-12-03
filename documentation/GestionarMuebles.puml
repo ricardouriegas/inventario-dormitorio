@@ -1,0 +1,31 @@
+@startuml GestionarMuebles
+title Gestionar Muebles
+left to right direction
+
+actor Administrador as admin
+actor "Base de Datos" as db
+
+rectangle "Sistema Inventario de Mi Cuarto" {
+    admin --> (Seleccionar Acción)
+
+    (Seleccionar Acción) --> (Agregar Mueble)
+    (Seleccionar Acción) --> (Eliminar Mueble)
+    (Seleccionar Acción) --> (Modificar Mueble)
+
+    (Agregar Mueble) --> (Ingresar Datos)
+    (Modificar Mueble) --> (Ingresar Datos)
+    (Eliminar Mueble) --> (Confirmar Eliminación)
+
+    (Ingresar Datos) --> (Validar Datos)
+    (Validar Datos) --> (Guardar Datos)
+    (Guardar Datos) --> db
+
+    (Confirmar Eliminación) --> db
+
+    (Agregar Mueble) .-> (Seleccionar Categoría) : <<include>>
+    (Agregar Mueble) .-> (Seleccionar Ubicación) : <<include>>
+    (Modificar Mueble) .-> (Seleccionar Categoría) : <<include>>
+    (Modificar Mueble) .-> (Seleccionar Ubicación) : <<include>>
+}
+
+@enduml

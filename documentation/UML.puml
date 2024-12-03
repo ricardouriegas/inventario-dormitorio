@@ -1,5 +1,5 @@
 @startuml cuarto
-' view in vertical direction
+' Orientación horizontal
 left to right direction
 title Sistema de Inventario del Cuarto
 
@@ -13,57 +13,68 @@ rectangle "Sistema Inventario de Mi Cuarto" {
     (Gestionar Ubicaciones) as CU6
     (Buscar Item) as CU7
 
-    ' mueble
+    ' Mueble
     (Alta Mueble) as CU2.1
     (Baja Mueble) as CU2.2
     (Modificar Mueble) as CU2.3
 
-    ' inmueble
+    ' Inmueble
     (Alta Inmueble) as CU3.1
     (Baja Inmueble) as CU3.2
     (Modificar Inmueble) as CU3.3
 
-    ' categorías
+    ' Categorías
     (Alta Categoría) as CU5.1
     (Baja Categoría) as CU5.2
     (Modificar Categoría) as CU5.3
 
-    ' ubicaciones
+    ' Ubicaciones
     (Alta Ubicación) as CU6.1
     (Baja Ubicación) as CU6.2
     (Modificar Ubicación) as CU6.3
 
-    ' buscar item
-    (Buscar Item por Criterio) as CU7.1
-
-    CU2 .-> CU2.1 : include
-    CU2 .-> CU2.2 : include
-    CU2 .-> CU2.3 : include
-
-    CU3 .-> CU3.1 : include
-    CU3 .-> CU3.2 : include
-    CU3 .-> CU3.3 : include
-
-    CU5 .-> CU5.1 : include
-    CU5 .-> CU5.2 : include
-    CU5 .-> CU5.3 : include
-
-    CU6 .-> CU6.1 : include
-    CU6 .-> CU6.2 : include
-    CU6 .-> CU6.3 : include
-
-    CU7 .-> CU7.1 : include
-
-    CU2 .-> CU5 : extend
-    CU2 .-> CU6 : extend
-    
-    CU3 .-> CU5 : extend
-    CU3 .-> CU6 : extend
+    ' Casos de Uso Incluidos
+    (Seleccionar Categoría)
+    (Seleccionar Ubicación)
 }
 
-CU1 --> CU2
-CU1 --> CU3
+' Relaciones entre Actores y Casos de Uso Principales
 Admin --> CU1
+Admin --> CU2
+Admin --> CU3
+Admin --> CU5
+Admin --> CU6
 Admin --> CU7
+
+' Relaciones entre Casos de Uso Principales y Secundarios
+CU2 --> CU2.1
+CU2 --> CU2.2
+CU2 --> CU2.3
+
+CU3 --> CU3.1
+CU3 --> CU3.2
+CU3 --> CU3.3
+
+CU5 --> CU5.1
+CU5 --> CU5.2
+CU5 --> CU5.3
+
+CU6 --> CU6.1
+CU6 --> CU6.2
+CU6 --> CU6.3
+
+' Relaciones de Inclusión para Gestionar Muebles
+CU2.1 .-> (Seleccionar Categoría) : <<include>>
+CU2.1 .-> (Seleccionar Ubicación) : <<include>>
+CU2.3 .-> (Seleccionar Categoría) : <<include>>
+CU2.3 .-> (Seleccionar Ubicación) : <<include>>
+
+' Relaciones de Inclusión para Gestionar Categorías
+CU5.1 .-> (Seleccionar Categoría) : <<include>>
+CU5.3 .-> (Seleccionar Categoría) : <<include>>
+
+' Relaciones de Inclusión para Gestionar Ubicaciones
+CU6.1 .-> (Seleccionar Ubicación) : <<include>>
+CU6.3 .-> (Seleccionar Ubicación) : <<include>>
 
 @enduml

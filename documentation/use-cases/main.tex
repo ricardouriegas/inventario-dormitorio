@@ -260,20 +260,20 @@ El sistema permitira gestionar de mejor manera el inventario de items del dormit
     \centering
     \begin{tabular}{|l|p{10cm}|}
         \hline
-        \textbf{Descripción} & El usuario podrá agregar, modificar y eliminar ubicaciones de los ítems. \\ \hline
-        \textbf{Actores} & Usuario \\ \hline
-        \textbf{Precondición} & El usuario debe estar autenticado. \\ \hline
+        \textbf{Descripción} & El administrador podrá agregar, modificar y eliminar ubicaciones de los ítems en el inventario. \\ \hline
+        \textbf{Actores} & Administrador \\ \hline
+        \textbf{Precondición} & El administrador debe estar autenticado. \\ \hline
         \textbf{Postcondición} & La ubicación se agrega, modifica o elimina del inventario. \\ \hline
         \textbf{Flujo Principal} & 
         \begin{enumerate}
-            \item El usuario selecciona la opción de gestionar ubicaciones.
+            \item El administrador selecciona la opción de gestionar ubicaciones.
             \item El sistema muestra la lista de ubicaciones actuales.
-            \item El usuario elige agregar, modificar o eliminar una ubicación.
+            \item El administrador elige agregar, modificar o eliminar una ubicación.
             \item El sistema procesa la acción solicitada y actualiza las ubicaciones.
         \end{enumerate} \\ \hline
         \textbf{Flujos Alternativos} & 
         \begin{enumerate}
-            \item Si el usuario no está autenticado, el sistema solicita iniciar sesión.
+            \item Si el administrador no está autenticado, el sistema solicita iniciar sesión.
             \item Si hay errores en la entrada de datos, el sistema muestra mensajes de error.
         \end{enumerate} \\ \hline
         \textbf{Requisitos Relacionados} & RF5 Gestionar Ubicaciones \\ \hline
@@ -286,13 +286,13 @@ El sistema permitira gestionar de mejor manera el inventario de items del dormit
     \centering
     \begin{tabular}{|l|p{10cm}|}
         \hline
-        \textbf{Descripción} & El usuario podrá buscar items dentro del inventario utilizando diferentes criterios de búsqueda. \\ \hline
+        \textbf{Descripción} & El usuario podrá buscar ítems dentro del inventario utilizando diferentes criterios de búsqueda. \\ \hline
         \textbf{Actores} & Usuario \\ \hline
         \textbf{Precondición} & El usuario debe estar autenticado. \\ \hline
-        \textbf{Postcondición} & Se muestra una lista de items que coinciden con los criterios de búsqueda especificados. \\ \hline
+        \textbf{Postcondición} & Se muestra una lista de ítems que coinciden con los criterios de búsqueda especificados. \\ \hline
         \textbf{Flujo Principal} & 
         \begin{enumerate}
-            \item El usuario selecciona la opción de buscar item.
+            \item El usuario selecciona la opción de buscar ítem.
             \item El sistema presenta un formulario de búsqueda con diferentes criterios.
             \item El usuario ingresa los criterios de búsqueda y envía la solicitud.
             \item El sistema procesa la solicitud y muestra los resultados que coinciden.
@@ -300,8 +300,8 @@ El sistema permitira gestionar de mejor manera el inventario de items del dormit
         \textbf{Flujos Alternativos} & 
         \begin{enumerate}
             \item Si el usuario no está autenticado, el sistema solicita iniciar sesión.
-            \item Si no se encuentran items que coincidan, el sistema informa al usuario.
-            \item Si hay errores en la entrada de datos, el sistema muestra mensajes de error.
+            \item Si no se encuentran ítems que coincidan, el sistema muestra un mensaje indicando que no se encontraron resultados.
+            \item Si hay errores en la búsqueda, el sistema muestra mensajes de error.
         \end{enumerate} \\ \hline
         \textbf{Requisitos Relacionados} & RF6 Buscar Item \\ \hline
     \end{tabular}
@@ -357,13 +357,61 @@ Se espera que, con la adopción de este sistema, se logre una gestión más orga
     \caption{Boceto rápido de la interfaz deseada}
 \end{figure}
 
+\begin{figure}[H]
+    \center
+    \includegraphics[width=\textwidth]{img/principal.png}
+    \caption{Boceto rápido de la interfaz deseada}
+\end{figure}
+
 \subsection{Diagrama de Casos de Uso}
 \begin{figure}[H]
     \center
     \includegraphics[width=\textwidth]{img/image.png}
     \caption{Diagrama General de Casos de Uso del Proyecto}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/GestionarItems.png}
+    \caption{Diagrama de Casos de Uso: Gestionar Items}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/GestionarMuebles.png}
+    \caption{Diagrama de Casos de Uso: Gestionar Muebles}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/GestionarInmuebles.png}
+    \caption{Diagrama de Casos de Uso: Gestionar Inmuebles}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/GestionarCategorias.png}
+    \caption{Diagrama de Casos de Uso: Gestionar Categorías}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/GestionarUbicaciones.png}
+    \caption{Diagrama de Casos de Uso: Gestionar Ubicaciones}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/BuscarItem.png}
+    \caption{Diagrama de Casos de Uso: Buscar Item}
+\end{figure}
+
 % no aplica
-% \subsection{Manual Preliminar de Usuario}
+\subsection{Diagrama Entidad-Relación}
+\begin{figure}[H]
+    \center
+    \includegraphics[width=\textwidth]{img/EntidadRelacion.png}
+    \caption{Diagrama Entidad-Relación del Sistema}
+\end{figure}
 
 \end{document}

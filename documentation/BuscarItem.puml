@@ -1,0 +1,26 @@
+@startuml BuscarItem
+title Buscar Item
+left to right direction
+
+actor Usuario as user
+actor "Base de Datos" as db
+
+rectangle "Sistema Inventario de Mi Cuarto" {
+    user --> (Seleccionar Buscar Item)
+
+    (Seleccionar Buscar Item) --> (Mostrar Formulario de Búsqueda)
+    (Mostrar Formulario de Búsqueda) --> user : Presentar criterios
+
+    user --> (Ingresar Criterios de Búsqueda)
+    (Ingresar Criterios de Búsqueda) --> (Procesar Búsqueda)
+    (Procesar Búsqueda) --> db : Consultar items
+
+    db --> (Procesar Búsqueda) : Retornar resultados
+    (Procesar Búsqueda) --> (Mostrar Resultados)
+
+    ' Flujos Alternativos
+    (Procesar Búsqueda) .down.> (Mostrar Mensaje "No se encontraron items") : <<extend>>
+    (Ingresar Criterios de Búsqueda) .down.> (Mostrar Mensaje de Error) : <<extend>>
+}
+
+@enduml

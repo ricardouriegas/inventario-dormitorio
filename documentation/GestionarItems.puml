@@ -1,0 +1,31 @@
+@startuml GestionarItems
+title Gestionar Items
+left to right direction
+
+actor Administrador as admin
+actor "Base de Datos" as db
+
+rectangle "Sistema Inventario de Mi Cuarto" {
+    admin --> (Seleccionar Acción)
+
+    (Seleccionar Acción) --> (Agregar Item)
+    (Seleccionar Acción) --> (Eliminar Item)
+    (Seleccionar Acción) --> (Modificar Item)
+
+    (Agregar Item) --> (Ingresar Datos)
+    (Modificar Item) --> (Ingresar Datos)
+    (Eliminar Item) --> (Confirmar Eliminación)
+
+    (Ingresar Datos) --> (Validar Datos)
+    (Validar Datos) --> (Guardar Datos)
+    (Guardar Datos) --> db
+
+    (Confirmar Eliminación) --> db
+
+    (Agregar Item) .-> (Seleccionar Categoría) : <<include>>
+    (Agregar Item) .-> (Seleccionar Ubicación) : <<include>>
+    (Modificar Item) .-> (Seleccionar Categoría) : <<include>>
+    (Modificar Item) .-> (Seleccionar Ubicación) : <<include>>
+}
+
+@enduml
